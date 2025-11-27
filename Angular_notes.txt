@@ -1,0 +1,194 @@
+Angular is a front-end framework by Google.
+
+Used for building Single Page Applications (SPAs).
+
+Based on TypeScript (a superset of JavaScript).
+
+Core concept: Component-based architecture (everything in Angular is a component).
+
+
+Data binding :
+ 
+  Data binding in Angular is essentially a way to establish a connection between the application's data and the UI components. It involves binding properties of components (such as input fields, labels, etc.) to data sources, like variables or models, so that changes in one automatically reflect in the other.
+
+Types of Data Binding
+Angular allows both One-way and Two-way Data Binding. We will study both of them in detail in the below section.
+
+ One-Way Binding:
+
+In one-way binding, data flows in a single direction, either from the component to the view (interpolation or property binding) or from the view to the component (event binding).
+
+1. Interpolation
+This involves displaying component data in the view by enclosing the property or expression in double curly braces, like {{ data }}. Angular automatically updates the view whenever the underlying data changes.
+
+2. Property Binding
+This is achieved by using square brackets to bind a property of an HTML element to a component property. For instance, [property]="data" binds the value of the component's "data" property to the HTML element's property.
+
+3. Event Binding
+This allows the view to communicate changes back to the component when an event occurs, such as a button click or input change. Event binding is denoted by parentheses, like (event)="handler()".
+
+Two way binding :
+
+Two-way data binding gives you a way to share data between view to source and vice versa simultaneously. When we bind data using two-way data binding the view and source are in sync and updated data accordingly.
+
+Two-way data binding uses the "ngModel" directive to bind the data and we need to import the Forms Module to use it otherwise it will throw an error.
+
+1.ngModel 2.ngClass 3.ngStyle
+--------------------------------------------------------------------------------------------------------------------------
+
+SIGNALS
+
+It is a reactive primitive that offer the granular tracking of state changes.
+
+1.Writable signals
+2.Computed signals
+3.Effects
+
+--------------------------------------------------------------------------------------------------------------------------
+PIPES
+
+Pipes in Angular are functions that transform displayed data in the template.
+They are used to format or transform values before presenting them to the user.
+
+Data formatting in templates (e.g., date, currency).
+
+✅ Cleaner HTML templates (no complex logic).
+
+✅ Reusability (same transformation across components).
+
+--------------------------------------------------------------------------------------------------------------------------
+Dependency Injection (DI):
+
+Dependency Injection (DI) is a design pattern used in Angular to provide components, services, or objects with the dependencies they need, rather than creating them directly.
+
+It makes applications modular, testable, and maintainable.
+
+create service : ng g s <service name>
+
+service must have @Injectable
+
+add in providers in app.module.ts
+
+create object and use using constructor.
+
+-------------------------------------------------------------------------------------------------------------------------
+
+API integration :
+
+To integrate a REST API in Angular, you use the HttpClient module. Here's a complete step-by-step guide:
+
+1.Import HttpClientModule in app.module.ts
+
+2.In service file add http client in parameter.
+
+3.Create method and use observable any component having access to that service will get data and subscribe to that function.
+
+4.In Component file create ngOnInit() with subscribe to get data and assign it to certain variable.
+
+5.Call that variable in html page.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Type Checking :
+
+1. create an interface instead of returning any with export keyword.
+
+--------------------------------------------------------------------------------------------------------------------------
+Component Communication : 
+
+1. create a component with cmd - ng g c component/<name>
+
+2.add TaskComponent in module file.
+
+@Input decorator (Custom property binding)
+
+---------------------------------------------------------------------------------------------------------------------------
+
+Module & NgModule: 
+
+An Angular Module is a container for related components, directives, pipes, and services. It helps group features logically and manage dependencies.
+
+NgModule is a decorator (@NgModule) that turns a plain TypeScript class into an Angular module.
+
+1.every application needs atleast one module file.
+
+2.we cannot use any component etc without declaring in ngModule file.
+
+---------------------------------------------------------------------------------------------------------------------------
+
+In Angular, lifecycle hooks are special methods that are invoked when a component is invoked, instantiated, destroyed.
+
+Hook	Purpose
+ngOnChanges()	        Called when an input-bound property changes.
+ngOnInit()          	Called once after the first ngOnChanges()—used for 				initialization.
+ngDoCheck()		Detect and act upon changes that Angular can't or doesn't 			detect.
+ngAfterContentInit()	Called after content (ng-content) has been projected into 			view.
+ngAfterContentChecked()	Called every time the projected content is checked.
+ngAfterViewInit()	Called after the component’s view and child views are 				initialized.
+ngAfterViewChecked()	Called every time the view (and child views) have been 				checked.
+ngOnDestroy()		Called just before the component is destroyed. Cleanup 				here.
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+RxJs- Reactive Extensions:
+
+Observable : It is wrapper around the asynchronous data.We use observable to handle the asynchronous data.
+
+Javascript is a single thread programming language.We have to wait until it complete the first thread.
+
+we can handle using both promise and observable.
+
+1.promise cant work with streaming data if any error occurs.
+2.promise only works when no one usind code.
+
+An Observable is a stream of data that can emit:
+
+one value,
+
+multiple values, or
+
+no value at all — over time
+
+1.to emit data use next 
+2.to emit error use error
+3.to give complete signal use complete
+
+
+of() is an operator that converts its arguments into an Observable emitting those values in sequence, then completes.
+
+from() is another RxJS creation operator that converts:
+
+arrays,strings,promises,iterables,async functions...into an observable stream.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Async and Await :
+
+when we want to make code readable and simple and want to work with try and catch we use async & await with promises.
+
+The firstValueFrom() function is provided by RxJS and is used to:
+
+🔄 Convert an Observable into a Promise, resolving with the first emitted value.
+
+------------------------------------------------------------------------------------------------------------------------------
+
+Subjects in RxJs:
+
+A subject is a special type of Observable that allows values to be multicast to many observers. Subjects are like event emitters.
+simply used for cross component communication.
+
+
+Commands :
+
+new project : ng new <application-name>
+
+start : ng serve or npm start run 
+
+generate pipes : ng generate pipe <pipe-name>
+
+
+
+
+
+
+
