@@ -82,6 +82,11 @@ const p1 = new Person("Shaik", 25);
 console.log(p1.greet());
 // Hello, my name is Shaik and I am 25 years old.
 
+Destructuring is a JavaScript feature that allows you to unpack values from arrays or properties from objects into separate variables in a concise and readable way.
+
+👉 In simple words:
+Destructuring lets you take data out of arrays or objects and store it directly into variables.
+
 What is a Promise?
 
 Promises are a very important concept in JavaScript, especially for handling asynchronous code (like API calls, file reading, timers, etc.).
